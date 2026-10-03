@@ -1,0 +1,50 @@
+//
+//  WFChat-Prefix-Header.pch
+//  WUHOIBDK
+//
+//  Created by Heavyrain.Lee on 2019/9/22.
+//  Copyright © 2019 WildFire Chat. All rights reserved.
+//
+
+#ifndef WFChat_Prefix_Header_pch
+#define WFChat_Prefix_Header_pch
+
+#ifdef __OBJC__
+
+#import <UIKit/UIKit.h>
+
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+
+// 原 XQQChatClient/PrefixHeader.h
+#define WFCCString(key) NSLocalizedStringFromTable(key, @"wfc", nil)
+#define LocalizedString(key) NSLocalizedStringFromTable(key, @"InfoPlist", nil)
+
+#import <SDWebImage/SDWebImage.h>
+#import "XQQChatClient.h"
+#import "XQQChatUIKit.h"
+#import "MBProgressHUD.h"
+#import "SVProgressHUD.h"
+
+#import "XQQBUOIWNDefine.h"
+#import "XQQUOIWNConstant.h"
+#import "XQQCommonHelper.h"
+#import "XQQAppService.h"
+
+#import "NSString+Extension.h"
+#import "UIColor+Gradient.h"
+#import "UIView+Extension.h"
+#import "UIFont+YH.h"
+
+#import "XQQODJNLockStatusManager.h"
+#import "ObjectModel.h"
+
+#import "XQQSRIMNetworkService.h"
+#import "XQQAppCache.h"
+#import "XQQGroupService.h"
+#import "XQQSRIMService.h"
+#import "XQQUserService.h"
+
+#endif /* __OBJC__ */
+
+#endif /* WFChat_Prefix_Header_pch */

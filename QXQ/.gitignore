@@ -1,0 +1,16 @@
+ios-chat.xcworkspace/xcuserdata
+wfuikit/bin
+wfuikit/bin_tmp
+wfuikit/Frameworks
+wfuikit/WFChatUIKit.xcodeproj/xcuserdata
+wfclient/libcrypto.a
+wfclient/libssl.a
+wfclient/WFChatClient/Proto/libcrypto_arm64
+wfclient/WFChatClient/Proto/libcrypto_arm64_sim.a
+wfclient/WFChatClient/Proto/libssl_arm64
+wfclient/WFChatClient/Proto/libssl_arm64_sim.a
+wfclient/WFChatClient/Proto/libcrypto_arm64.a
+wfclient/WFChatClient/Proto/libssl_arm64.a
+wfclient/build
+wfuikit/build
+build
