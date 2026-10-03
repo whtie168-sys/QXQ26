@@ -12,6 +12,7 @@
 #import "XQQScheduleListVC.h"
 #import "XQQFileBrowserVC.h"
 #import "XQQNotesHomeVC.h"
+#import "XQQPasswordHomeVC.h"
 
 typedef NS_ENUM(NSInteger, XQQToolAction) {
     XQQToolActionScan,
@@ -23,6 +24,7 @@ typedef NS_ENUM(NSInteger, XQQToolAction) {
     XQQToolActionSchedule,
     XQQToolActionFileManager,
     XQQToolActionNotes,
+    XQQToolActionPasswordSafe,
 };
 
 @interface XQQToolItem : NSObject
@@ -85,7 +87,8 @@ static NSString * const kXQQToolCellId = @"XQQToolCell";
         // 日程排在最前
         @[[XQQToolItem action:XQQToolActionSchedule symbol:@"calendar" fallback:@"日" title:LLLLLL(@"ToolboxSchedule") subtitle:LLLLLL(@"ToolboxScheduleDesc")],
           [XQQToolItem action:XQQToolActionFileManager symbol:@"folder" fallback:@"文" title:LLLLLL(@"FileManager") subtitle:LLLLLL(@"ToolboxFileManagerDesc")],
-          [XQQToolItem action:XQQToolActionNotes symbol:@"note.text" fallback:@"记" title:LLLLLL(@"Notes") subtitle:LLLLLL(@"ToolboxNotesDesc")]],
+          [XQQToolItem action:XQQToolActionNotes symbol:@"note.text" fallback:@"记" title:LLLLLL(@"Notes") subtitle:LLLLLL(@"ToolboxNotesDesc")],
+          [XQQToolItem action:XQQToolActionPasswordSafe symbol:@"lock.shield" fallback:@"密" title:LLLLLL(@"PwdSafe") subtitle:LLLLLL(@"ToolboxPwdSafeDesc")]],
         @[[XQQToolItem action:XQQToolActionScan symbol:@"qrcode.viewfinder" fallback:@"扫" title:LLLLLL(@"ToolboxScan") subtitle:LLLLLL(@"ToolboxScanDesc")],
           [XQQToolItem action:XQQToolActionMyQrCode symbol:@"qrcode" fallback:@"码" title:LLLLLL(@"ToolboxMyQrCode") subtitle:LLLLLL(@"ToolboxMyQrCodeDesc")]],
         @[[XQQToolItem action:XQQToolActionAddFriend symbol:@"person.badge.plus" fallback:@"友" title:LLLLLL(@"ToolboxAddFriend") subtitle:LLLLLL(@"ToolboxAddFriendDesc")],
@@ -150,6 +153,12 @@ static NSString * const kXQQToolCellId = @"XQQToolCell";
 
 - (void)perform:(XQQToolAction)action {
     switch (action) {
+        case XQQToolActionPasswordSafe: {
+            XQQPasswordHomeVC *vc = [XQQPasswordHomeVC new];
+            vc.hidesBottomBarWhenPushed = YES;
+            [self.navigationController pushViewController:vc animated:YES];
+            break;
+        }
         case XQQToolActionNotes: {
             XQQNotesHomeVC *vc = XQQNotesHomeVC.new;
             vc.hidesBottomBarWhenPushed = YES;

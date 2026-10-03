@@ -135,7 +135,7 @@ NSNotificationName const XQQPasswordStoreDidChangeNotification = @"XQQPasswordSt
 }
 
 - (BOOL)saveEntry:(XQQPasswordEntry *)entry error:(NSError **)error {
-    NSMutableArray *list = [self loadedEntries];
+    NSMutableArray<XQQPasswordEntry *> *list = [self loadedEntries];
     NSUInteger index = [self indexOfEntryId:entry.entryId];
     XQQPasswordEntry *copy = [entry copy];
     copy.updatedAt = NSDate.date;

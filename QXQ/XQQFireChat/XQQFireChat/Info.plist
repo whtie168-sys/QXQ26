@@ -46,14 +46,14 @@
 	<string>We need access to your camera to take photos, send picture messages, modify profile pictures, and scan QR codes. Is this allowed?</string>
 	<key>NSContactsUsageDescription</key>
 	<string>We need to access your address book to search for and invite friends, "Message" -&gt; "+" -&gt; "Add friend" -&gt; "Mobile phone contact". Address book information will not be uploaded to the server, please feel free to use it. Is it allowed?</string>
+	<key>NSFaceIDUsageDescription</key>
+	<string>使用 Face ID 解锁保管箱</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string>We need access to your location to send location information, is that allowed?</string>
 	<key>NSMicrophoneUsageDescription</key>
 	<string>We need access to your microphone to make audio and video calls and record voice messages, is that allowed?</string>
 	<key>NSPhotoLibraryAddUsageDescription</key>
 	<string>We need to access your album for saving picture messages, is that allowed?</string>
-	<key>NSFaceIDUsageDescription</key>
-	<string>使用 Face ID 解锁保管箱</string>
 	<key>NSPhotoLibraryUsageDescription</key>
 	<string>We need access to your album to take photos, send picture messages, modify profile pictures, and scan QR codes.  Is this allowed?</string>
 	<key>PHPhotoLibraryPreventAutomaticLimitedAccessAlert</key>
