@@ -2,7 +2,7 @@ workflows:
 
   ios-native-quick-start:
 
-    name: QXQ
+    name: QiuXQ
 
     max_build_duration: 120
 

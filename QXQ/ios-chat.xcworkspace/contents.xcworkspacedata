@@ -4,10 +4,4 @@
    <FileRef
       location = "group:XQQFireChat/XQQFireChat.xcodeproj">
    </FileRef>
-   <FileRef
-      location = "group:XQQChatUIKit/XQQChatUIKit.xcodeproj">
-   </FileRef>
-   <FileRef
-      location = "group:XQQChatClient/XQQChatClient.xcodeproj">
-   </FileRef>
 </Workspace>
