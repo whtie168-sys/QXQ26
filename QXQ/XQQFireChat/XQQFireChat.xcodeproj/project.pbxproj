@@ -1695,7 +1695,7 @@
 		B7CA48CA2834B8AD00CB2F71 /* XQQOUEJRichNotificationCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XQQOUEJRichNotificationCell.m; sourceTree = "<group>"; };
 		B7CA48CB2834B8AD00CB2F71 /* XQQOUEJRichNotificationCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XQQOUEJRichNotificationCell.h; sourceTree = "<group>"; };
 		B7D8F72F2783024E00752426 /* ZLPhotoBrowser.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = ZLPhotoBrowser.xcframework; sourceTree = "<group>"; };
-		B7D8F7362783035200752426 /* SDWebImage.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = SDWebImage.xcframework; path = ../XQQChatUIKit/Vendor/SDWebImage/SDWebImage.xcframework; sourceTree = "<group>"; };
+		B7D8F7362783035200752426 /* SDWebImage.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = SDWebImage.xcframework; path = XQQChatUIKit/Vendor/SDWebImage/SDWebImage.xcframework; sourceTree = "<group>"; };
 		B7E6DBD72845AE9A00A24AE8 /* XQQCJsonSerializer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XQQCJsonSerializer.h; sourceTree = "<group>"; };
 		B7E6DBD82845AE9A00A24AE8 /* XQQCJsonSerializer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XQQCJsonSerializer.m; sourceTree = "<group>"; };
 		B7E6DBDB2846DC3300A24AE8 /* XQQCRawMessageContent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XQQCRawMessageContent.m; sourceTree = "<group>"; };
@@ -2145,7 +2145,7 @@
 				B71F0ACE28F54759000A7C8A /* UIKit.framework */,
 				52E90F68DEA24728ACDB9072 /* libresolv.tbd */,
 			);
-			path = Frameworks;
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		2F0BD9102537424500A7B674 /* ZLPhotoBrowser */ = {
@@ -2332,7 +2332,6 @@
 				2FD550F32442AA5800B3EE09 /* YBAttributeTextTapAction */,
 				2F550EF3217F5CC000F56C26 /* ChatInputBar */,
 				2F550F3C217F5CC100F56C26 /* Pinyin */,
-				2F550F8D217F5CC100F56C26 /* KZSmallVideoRecorder */,
 				2F550FA0217F5CC100F56C26 /* KxMenu */,
 				2F550FA3217F5CC100F56C26 /* AFNetworking */,
 				2F550FD5217F5CC100F56C26 /* MBProgressHUD */,
@@ -2397,13 +2396,6 @@
 				2B14FC8E25C23D3600684B91 /* QOEUAPinyinUtility.m */,
 			);
 			path = Pinyin;
-			sourceTree = "<group>";
-		};
-		2F550F8D217F5CC100F56C26 /* KZSmallVideoRecorder */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = KZSmallVideoRecorder;
 			sourceTree = "<group>";
 		};
 		2F550FA0217F5CC100F56C26 /* KxMenu */ = {

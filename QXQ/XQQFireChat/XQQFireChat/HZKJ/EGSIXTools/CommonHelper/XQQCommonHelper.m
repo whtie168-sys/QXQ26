@@ -336,52 +336,52 @@
 
 - (void)updateAppSuccess:(void(^)(BOOL isUpdate))success {
     WS(weakself)
-    [XQQAppService.sharedAppService requestUrlNoLogin:@"/global_config" params:@{} success:^(NSDictionary * _Nonnull dict) {
-        NSArray *versions = dict[@"result"][@"version"];
-        if (versions.count <= 0) {
-            return;
-        }
-        NSDictionary *version1Dic = versions.firstObject;
-        NSString *links = version1Dic[@"links"];
-        if (links.length) {
-            [weakself saveLinks:links];
-        }
-        NSString *versionNum = version1Dic[@"iosVersion"];
-        NSString *iosInfo = @"";
-        if ([version1Dic[@"iosInfo"] isKindOfClass:NSNull.class]) {
-            iosInfo = @"";
-        }else {
-            iosInfo = version1Dic[@"iosInfo"];
-        }
-        NSString *iosPath = version1Dic[@"iosPath"];
-        BOOL force = [version1Dic[@"force"] boolValue];
-        NSInteger isReview = [version1Dic[@"isReview"] integerValue];
-        NSInteger isIosTips = [version1Dic[@"isIosTips"] integerValue]; // 0 不提示 1 提示
-        
-        [NSUserDefaults.standardUserDefaults setInteger:isReview forKey:@"kIsReview"];
-        [NSUserDefaults.standardUserDefaults synchronize];
-        
-        weakself.iosVersion = version1Dic[@"iosVersion"];
-        weakself.iosPath = iosPath;
-        
-        if (isReview == 1 || isIosTips == 0) {
-            success ? success(NO) : nil;
-            return;
-        }
-        NSString *localFixedVersion = VersionNUM;
-        if (localFixedVersion.length > 0 &&
-            versionNum.length > 0 &&
-            [localFixedVersion compare:versionNum options:NSNumericSearch] != NSOrderedAscending) {
-            success ? success(NO) : nil;
-            return;
-        }
-        
-        XQQODJNUpdatedVersionPopView *popView = [[XQQODJNUpdatedVersionPopView alloc] init];
-        popView.isForce = force;
-//        [popView showVersion:versionNum info:iosInfo download:iosPath];
-        success ? success(YES) : nil;
-    } error:^(int errCode, NSString * _Nonnull message) {
-    }];
+//    [XQQAppService.sharedAppService requestUrlNoLogin:@"/global_config" params:@{} success:^(NSDictionary * _Nonnull dict) {
+//        NSArray *versions = dict[@"result"][@"version"];
+//        if (versions.count <= 0) {
+//            return;
+//        }
+//        NSDictionary *version1Dic = versions.firstObject;
+//        NSString *links = version1Dic[@"links"];
+//        if (links.length) {
+//            [weakself saveLinks:links];
+//        }
+//        NSString *versionNum = version1Dic[@"iosVersion"];
+//        NSString *iosInfo = @"";
+//        if ([version1Dic[@"iosInfo"] isKindOfClass:NSNull.class]) {
+//            iosInfo = @"";
+//        }else {
+//            iosInfo = version1Dic[@"iosInfo"];
+//        }
+//        NSString *iosPath = version1Dic[@"iosPath"];
+//        BOOL force = [version1Dic[@"force"] boolValue];
+//        NSInteger isReview = [version1Dic[@"isReview"] integerValue];
+//        NSInteger isIosTips = [version1Dic[@"isIosTips"] integerValue]; // 0 不提示 1 提示
+//        
+//        [NSUserDefaults.standardUserDefaults setInteger:isReview forKey:@"kIsReview"];
+//        [NSUserDefaults.standardUserDefaults synchronize];
+//        
+//        weakself.iosVersion = version1Dic[@"iosVersion"];
+//        weakself.iosPath = iosPath;
+//        
+//        if (isReview == 1 || isIosTips == 0) {
+//            success ? success(NO) : nil;
+//            return;
+//        }
+//        NSString *localFixedVersion = VersionNUM;
+//        if (localFixedVersion.length > 0 &&
+//            versionNum.length > 0 &&
+//            [localFixedVersion compare:versionNum options:NSNumericSearch] != NSOrderedAscending) {
+//            success ? success(NO) : nil;
+//            return;
+//        }
+//        
+//        XQQODJNUpdatedVersionPopView *popView = [[XQQODJNUpdatedVersionPopView alloc] init];
+//        popView.isForce = force;
+////        [popView showVersion:versionNum info:iosInfo download:iosPath];
+//        success ? success(YES) : nil;
+//    } error:^(int errCode, NSString * _Nonnull message) {
+//    }];
 }
 - (void)saveLinks:(NSString *)links {
     NSDictionary *resultDic = links.mj_JSONObject;

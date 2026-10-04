@@ -816,10 +816,11 @@ UNUserNotificationCenterDelegate, XQQQrCodeDelegate>
     return [self handleUrl:[url absoluteString] withNav:[self xqq_currentNavigationController]];
 }
 
-/// 处理扫码或外部打开的 wildfirechat:// 链接
+/// 处理扫码或外部打开的 App 链接（scheme 见 QXQ_URL_SCHEME）
 - (BOOL)handleUrl:(NSString *)str withNav:(UINavigationController *)navigator {
-    if ([str rangeOfString:@"wildfirechat://user" options:NSCaseInsensitiveSearch].location == 0) {
-        // wildfirechat://user/(用户id)####(有效期时间戳)
+    str = [self xqq_normalizedAppUrl:str];
+    if ([str rangeOfString:[self xqq_appUrlPrefix:@"user"] options:NSCaseInsensitiveSearch].location == 0) {
+        // <scheme>://user/(用户id)####(有效期时间戳)
         NSArray *results = [str componentsSeparatedByString:@"####"];
         NSString *expiredTip = _isChinese ? @"该二维码已过期，请重新生成" : @"The QR code has expired. Please re-create it";
         if (results.count <= 1 ||
@@ -846,8 +847,8 @@ UNUserNotificationCenterDelegate, XQQQrCodeDelegate>
         vc.hidesBottomBarWhenPushed = YES;
         [navigator pushViewController:vc animated:YES];
         return YES;
-    } else if ([str rangeOfString:@"wildfirechat://group" options:NSCaseInsensitiveSearch].location == 0) {
-        // wildfirechat://group/groupId?from=fromUserId
+    } else if ([str rangeOfString:[self xqq_appUrlPrefix:@"group"] options:NSCaseInsensitiveSearch].location == 0) {
+        // <scheme>://group/groupId?from=fromUserId
         NSString *groupId = [NSURLComponents componentsWithString:str].path.lastPathComponent;
         XQQWOIJWDGroupInfoQrVC *vc = XQQWOIJWDGroupInfoQrVC.new;
         vc.groupId = groupId;
@@ -855,8 +856,8 @@ UNUserNotificationCenterDelegate, XQQQrCodeDelegate>
         vc.hidesBottomBarWhenPushed = YES;
         [navigator pushViewController:vc animated:YES];
         return YES;
-    } else if ([str rangeOfString:@"wildfirechat://pcsession" options:NSCaseInsensitiveSearch].location == 0) {
-        // wildfirechat://pcsession/sessionId?platform=3
+    } else if ([str rangeOfString:[self xqq_appUrlPrefix:@"pcsession"] options:NSCaseInsensitiveSearch].location == 0) {
+        // <scheme>://pcsession/sessionId?platform=3
         NSURLComponents *components = [[NSURLComponents alloc] initWithString:str];
         int platform = 0;
         for (NSURLQueryItem *item in components.queryItems) {
@@ -872,6 +873,20 @@ UNUserNotificationCenterDelegate, XQQQrCodeDelegate>
         return YES;
     }
     return NO;
+}
+
+- (NSString *)xqq_appUrlPrefix:(NSString *)path {
+    return [NSString stringWithFormat:@"%@://%@", QXQ_URL_SCHEME, path];
+}
+
+/// 旧版本生成的二维码和 PC 端登录码仍是 wildfirechat://，统一转成当前 scheme 再解析
+- (NSString *)xqq_normalizedAppUrl:(NSString *)str {
+    static NSString *const kLegacyPrefix = @"wildfirechat://";
+    if (str.length > kLegacyPrefix.length &&
+        [str rangeOfString:kLegacyPrefix options:NSCaseInsensitiveSearch | NSAnchoredSearch].location == 0) {
+        return [NSString stringWithFormat:@"%@://%@", QXQ_URL_SCHEME, [str substringFromIndex:kLegacyPrefix.length]];
+    }
+    return str;
 }
 
 - (void)xqq_showError:(NSString *)message {

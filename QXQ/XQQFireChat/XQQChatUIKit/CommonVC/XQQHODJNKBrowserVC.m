@@ -372,8 +372,46 @@
     }
 }
 
+#pragma mark - JS Bridge
+
+/// 只有自家域名的页面才能调用原生能力（授权码、选联系人、打开新页面等）。
+/// 聊天里点开的第三方网页仍可正常浏览，但桥接调用一律拒绝。
+- (BOOL)xqqIsTrustedBridgeHost {
+
+    static NSArray<NSString *> *trustedDomains;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        trustedDomains = @[@"qqim1.app", @"866chat.com"];
+    });
+
+    NSURL *URL = self.webView.URL;
+    if (![URL.scheme.lowercaseString isEqualToString:@"https"]) {
+        return NO;
+    }
+
+    NSString *host = URL.host.lowercaseString;
+    if (!host.length) {
+        return NO;
+    }
+
+    for (NSString *domain in trustedDomains) {
+        if ([host isEqualToString:domain] ||
+            [host hasSuffix:[@"." stringByAppendingString:domain]]) {
+            return YES;
+        }
+    }
+
+    NSLog(@"JS bridge rejected for untrusted host %@", host);
+    return NO;
+}
+
 - (void)getAuthCode:(NSDictionary *)message
          completion:(JSCallback)completionHandler {
+
+    if (![self xqqIsTrustedBridgeHost]) {
+        completionHandler(-1, nil, YES);
+        return;
+    }
 
     NSString *appId = message[@"appId"];
     int appType = [message[@"appType"] intValue];
@@ -393,6 +431,10 @@
 }
 
 - (id)openUrl:(NSString *)url {
+
+    if (![self xqqIsTrustedBridgeHost]) {
+        return nil;
+    }
 
     XQQHODJNKBrowserVC *browser =
     [[XQQHODJNKBrowserVC alloc] init];
@@ -414,6 +456,11 @@
 }
 
 - (id)config:(NSDictionary *)message {
+
+    if (![self xqqIsTrustedBridgeHost]) {
+        [self.webView callHandler:@"error" arguments:@[@(-1)]];
+        return nil;
+    }
 
     NSString *appId = message[@"appId"];
     int appType = [message[@"apptype"] intValue];
@@ -451,6 +498,11 @@
 
 - (void)chooseContacts:(NSDictionary *)message
             completion:(JSCallback)completionHandler {
+
+    if (![self xqqIsTrustedBridgeHost]) {
+        completionHandler(1, nil, YES);
+        return;
+    }
 
     if(!self.webView.URL.host ||
        ![self.configDict[self.webView.URL.host] boolValue]) {

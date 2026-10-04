@@ -352,7 +352,7 @@ static NSDateFormatter *WOPCheckInFormatter(NSString *format) {
     [self.checkButton addTarget:self action:@selector(checkButtonAction) forControlEvents:UIControlEventTouchUpInside];
     [self.cardView addSubview:self.checkButton];
 
-    self.walletHintLabel = WOPMakeLabel(WOPFont(13, UIFontWeightRegular), WOPCheckInHintColor(), @"签到奖励存入球币钱包");
+    self.walletHintLabel = WOPMakeLabel(WOPFont(13, UIFontWeightRegular), WOPCheckInHintColor(), @"签到获得的积分可在「我的积分」查看");
     self.walletHintLabel.textAlignment = NSTextAlignmentCenter;
     [self.cardView addSubview:self.walletHintLabel];
 

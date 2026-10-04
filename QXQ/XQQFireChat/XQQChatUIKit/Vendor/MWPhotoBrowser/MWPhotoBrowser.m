@@ -16,6 +16,7 @@
 #import "LBXAlertAction.h"
 #import "MWQrScanResultViewController.h"
 #import "SVProgressHUD.h"
+#import "XQQConfig.h"
 
 #define PADDING                  10
 
@@ -1706,7 +1707,9 @@ static void * MWVideoPlayerObservation = &MWVideoPlayerObservation;
         return;
     }
     
-    if ([strResult rangeOfString:@"wildfirechat://" options:NSCaseInsensitiveSearch].location == 0) {
+    // 本 App 二维码（qxqchat://），兼容旧版本生成的 wildfirechat://
+    if ([strResult rangeOfString:[QXQ_URL_SCHEME stringByAppendingString:@"://"] options:NSCaseInsensitiveSearch].location == 0 ||
+        [strResult rangeOfString:@"wildfirechat://" options:NSCaseInsensitiveSearch].location == 0) {
         [self.navigationController popViewControllerAnimated:NO];
         if (self.scanResult) {
             self.scanResult(strResult);

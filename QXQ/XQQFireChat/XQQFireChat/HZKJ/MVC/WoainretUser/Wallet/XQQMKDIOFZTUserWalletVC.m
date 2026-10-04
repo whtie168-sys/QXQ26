@@ -128,7 +128,7 @@ static NSString *WOPMKDIOFZTWalletSafeText(id value) {
     NSString *recordId = WOPMKDIOFZTWalletSafeText(record.id).length ? WOPMKDIOFZTWalletSafeText(record.id) : WOPMKDIOFZTWalletSafeText(record.taskId);
     self.titleLabel.text = [self titleForChangeType:changeType];
     double value = [record.changeValue doubleValue];
-    self.amountLabel.text = value >= 0 ? [NSString stringWithFormat:@"+%.2f", value] : [NSString stringWithFormat:@"%.2f", value];
+    self.amountLabel.text = value >= 0 ? [NSString stringWithFormat:@"+%.0f", value] : [NSString stringWithFormat:@"%.0f", value];
     self.timeLabel.text = dateText.length ? dateText : @"--";
     self.idLabel.text = recordId.length ? [NSString stringWithFormat:@"ID:%@", recordId] : @"";
     self.lineView.hidden = last;
@@ -231,8 +231,8 @@ static NSString *WOPMKDIOFZTWalletSafeText(id value) {
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.title = @"我的钱包";
-    self.navigationItem.title = @"我的钱包";
+    self.title = @"我的积分";
+    self.navigationItem.title = @"我的积分";
     self.view.backgroundColor = [UIColor whiteColor];
     self.records = @[];
     self.monthSections = @[];
@@ -273,21 +273,21 @@ static NSString *WOPMKDIOFZTWalletSafeText(id value) {
     
     UILabel *titleLabel = [[UILabel alloc] init];
     titleLabel.translatesAutoresizingMaskIntoConstraints = NO;
-    titleLabel.text = @"球币钱包";
+    titleLabel.text = @"积分";
     titleLabel.textColor = [UIColor whiteColor];
     titleLabel.font = [UIFont systemFontOfSize:16 weight:UIFontWeightMedium];
     [self.walletCardView addSubview:titleLabel];
     
     UILabel *balanceTitleLabel = [[UILabel alloc] init];
     balanceTitleLabel.translatesAutoresizingMaskIntoConstraints = NO;
-    balanceTitleLabel.text = @"余额";
+    balanceTitleLabel.text = @"积分";
     balanceTitleLabel.textColor = [UIColor whiteColor];
     balanceTitleLabel.font = [UIFont systemFontOfSize:16 weight:UIFontWeightRegular];
     [self.walletCardView addSubview:balanceTitleLabel];
     
     self.balanceLabel = [[UILabel alloc] init];
     self.balanceLabel.translatesAutoresizingMaskIntoConstraints = NO;
-    self.balanceLabel.text = @"0.00";
+    self.balanceLabel.text = @"0";
     self.balanceLabel.textColor = [UIColor whiteColor];
     self.balanceLabel.font = [UIFont systemFontOfSize:25 weight:UIFontWeightBold];
     [self.walletCardView addSubview:self.balanceLabel];
@@ -469,7 +469,7 @@ static NSString *WOPMKDIOFZTWalletSafeText(id value) {
         tasks = result;
         dispatch_group_leave(group);
     } error:^(int errCode, NSString * _Nonnull message) {
-        errorMessage = message.length ? message : @"获取钱包余额失败";
+        errorMessage = message.length ? message : @"获取积分余额失败";
         dispatch_group_leave(group);
     }];
     
@@ -478,7 +478,7 @@ static NSString *WOPMKDIOFZTWalletSafeText(id value) {
         history = result;
         dispatch_group_leave(group);
     } error:^(int errCode, NSString * _Nonnull message) {
-        errorMessage = message.length ? message : @"获取钱包明细失败";
+        errorMessage = message.length ? message : @"获取积分明细失败";
         dispatch_group_leave(group);
     }];
     
@@ -598,14 +598,14 @@ static NSString *WOPMKDIOFZTWalletSafeText(id value) {
     
     UILabel *incomeLabel = [[UILabel alloc] init];
     incomeLabel.translatesAutoresizingMaskIntoConstraints = NO;
-    incomeLabel.text = [NSString stringWithFormat:@"收入  %.2f", sectionModel.income];
+    incomeLabel.text = [NSString stringWithFormat:@"获得  %.0f", sectionModel.income];
     incomeLabel.textColor = [UIColor colorWithWhite:0.18 alpha:1.0];
     incomeLabel.font = [UIFont systemFontOfSize:15];
     [header addSubview:incomeLabel];
     
     UILabel *expenseLabel = [[UILabel alloc] init];
     expenseLabel.translatesAutoresizingMaskIntoConstraints = NO;
-    expenseLabel.text = [NSString stringWithFormat:@"支出  %.2f", sectionModel.expense];
+    expenseLabel.text = [NSString stringWithFormat:@"使用  %.0f", sectionModel.expense];
     expenseLabel.textColor = [UIColor colorWithWhite:0.18 alpha:1.0];
     expenseLabel.font = [UIFont systemFontOfSize:15];
     [header addSubview:expenseLabel];
@@ -649,9 +649,9 @@ static NSString *WOPMKDIOFZTWalletSafeText(id value) {
 
 - (NSString *)moneyTextFromValue:(double)value forceSign:(BOOL)forceSign {
     if (forceSign && value >= 0) {
-        return [NSString stringWithFormat:@"+%.2f", value];
+        return [NSString stringWithFormat:@"+%.0f", value];
     }
-    return [NSString stringWithFormat:@"%.2f", value];
+    return [NSString stringWithFormat:@"%.0f", value];
 }
 
 - (NSDate *)dateFromTimestamp:(NSString *)timestamp {

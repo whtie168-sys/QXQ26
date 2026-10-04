@@ -7,6 +7,7 @@
 //
 
 #import "XQQMKDIOFZTNormalQrcodeVC.h"
+#import "XQQConfig.h"
 
 
 @interface XQQMKDIOFZTNormalQrcodeVC ()
@@ -49,7 +50,7 @@
     _grouptzboeuNameLabel.text = @"";
     if (_qrType == QRType_User) {
         self.navigationItem.title = _isChinese ? @"我的二维码" : @"My QR code";
-        _qrStr = [NSString stringWithFormat:@"wildfirechat://user/%@", self.target];
+        _qrStr = [NSString stringWithFormat:@"%@://user/%@", QXQ_URL_SCHEME, self.target];
         _descLabel.text = _isChinese ? @"打开App扫码加我为好友" : @"Open the App and scan the code to add me as a friend";
         
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(onUserInfoUpdated:) name:kUserInfoUpdated object:nil];
@@ -60,7 +61,7 @@
         self.groupInfo = [[XQQGroupDB sharedManager] getGroupInfoFromDB:self.target];
 
         
-        _qrStr = [NSString stringWithFormat:@"wildfirechat://group/%@", self.target];
+        _qrStr = [NSString stringWithFormat:@"%@://group/%@", QXQ_URL_SCHEME, self.target];
         _descLabel.text = _isChinese ? @"打开App扫码入群" : @"Open the App and scan the code into the group";
         _grouptzboeuNameLabel.text = self.groupInfo.name;
         

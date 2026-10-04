@@ -6,6 +6,7 @@
 //
 
 #import "XQQMKDIOFZTUserQrcodeVC.h"
+#import "XQQConfig.h"
 #import <SDWebImage/UIImageView+WebCache.h>
 
 @interface XQQMKDIOFZTUserQrcodeVC ()
@@ -90,7 +91,7 @@
     
     NSInteger waxiouvTimeInterval = (NSInteger)[waxiouvDate timeIntervalSince1970];
     
-    _qrStr = [NSString stringWithFormat:@"wildfirechat://user/%@####%ld", userId, waxiouvTimeInterval];
+    _qrStr = [NSString stringWithFormat:@"%@://user/%@####%ld", QXQ_URL_SCHEME, userId, waxiouvTimeInterval];
     WS(weakself)
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
         dispatch_async(dispatch_get_main_queue(), ^{

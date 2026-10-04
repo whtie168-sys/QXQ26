@@ -1,43 +1,19 @@
 //
-//  Config.m
-//  Wildfire Chat
-//
-//  Created by WF Chat on 2017/10/21.
-//  Copyright © 2024 WildFireChat. All rights reserved.
+//  XQQConfig.m
+//  QXQ
 //
 
 #import "XQQConfig.h"
 
 //IM服务HOST，域名或者IP，注意不能带http头，也不能带端口。
-//NSString *IM_SERVER_HOST = @"wildfirechat.net";
-//NSString *IM_SERVER_HOST = @"52.220.54.25";
 NSString *IM_SERVER_HOST = @"api.866chat.com";
 
-// App Server默认使用的是8888端口，替换为自己部署的服务时需要注意端口别填错了，使用http访问appserver时，需要确保appserver的配置文件中的wfc.all_client_support_ssl参数为false
-// 正式商用时，建议用https，确保token安全，可以使用nginx反向代理添加对ssl的支持。需要确保appserver的配置文件中的wfc.all_client_support_ssl参数为true
-// 如果您使用web-chat，由于最新chrome浏览器的策略，只有使用https才能带上cookie访问appserver的接口，所以就必须使
-// wfc.all_client_support_ssl为tue，所以客户端也必须使用https的应用服务地址
+//App Server 地址，正式商用请使用 https
+NSString *APP_SERVER_ADDRESS = @"https://api.qqim1.app";
 
-//NSString *APP_SERVER_ADDRESS = @"http://wildfirechat.net:8888";
-//NSString *APP_SERVER_ADDRESS = @"https://app.wildfirechat.net"; // 官方
-//NSString *APP_SERVER_ADDRESS = @"http://54.254.43.61:8888";
-
-//NSString *APP_SERVER_ADDRESS = @"https://api-qxq.im2026test.shop"; // 测试服务器
-
-//NSString *APP_SERVER_ADDRESS = @"http://54.254.43.61:8988";
-//NSString *APP_SERVER_ADDRESS = @"http://api.866chat.com:8888"; // 正式服务器
-NSString *APP_SERVER_ADDRESS = @"https://api.qqim1.app"; // 正式服务器
-
-
-//用户协议和隐私政策，上线前请替换成您自己的内容
-NSString *USER_PRIVACY_URL = @"https://wildfirechat.net/wildfirechat_user_privacy.html";
-NSString *USER_AGREEMENT_URL = @"https://wildfirechat.net/wildfirechat_user_agreement.html";
+NSString *const QXQ_URL_SCHEME = @"qxqchat";
 
 NSString *FILE_TRANSFER_ID = @"wfc_file_transfer";
-
-//如果想要关掉工作台，把WORK_PLATFORM_URL设置为nil就可以了
-//NSString *WORK_PLATFORM_URL = nil;
-NSString *WORK_PLATFORM_URL = @"https://open.wildfirechat.cn/work.html";
 
 //有2种登录方式，手机号码+验证码登录 和 手机号码+密码登录。
 //这个开关是否优先密码登录
