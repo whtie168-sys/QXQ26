@@ -7,9 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		AA1000010000000000000001 /* NotificationService.m in Sources */ = {isa = PBXBuildFile; fileRef = AA1000050000000000000005 /* NotificationService.m */; };
-		AA1000020000000000000002 /* UserNotifications.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F1B0DCE21E19AF400139CB1 /* UserNotifications.framework */; };
-		AA1000030000000000000003 /* QXQNotificationService.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = AA1000070000000000000007 /* QXQNotificationService.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		00E5194E04F348FABC29780E /* MWGridCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B70162E8290E2F1700DCD651 /* MWGridCell.m */; };
 		014635F26D9C4F7FB2BEFCEC /* XQQCRawMessageContent.m in Sources */ = {isa = PBXBuildFile; fileRef = B7E6DBDB2846DC3300A24AE8 /* XQQCRawMessageContent.m */; };
 		01CA80A5D371490D89623241 /* Emoj.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2F143A69217F7D4100B3E38A /* Emoj.plist */; };
@@ -494,6 +491,9 @@
 		A8D34436E2F44152AFEC427A /* XQQCUnknownMessageContent.m in Sources */ = {isa = PBXBuildFile; fileRef = 90B044441FEFD6BA00AFE79B /* XQQCUnknownMessageContent.m */; };
 		A9111C2F711F49969C682A8F /* XQQCPCLoginRequestMessageContent.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B56239E24FB8F1700EB2A03 /* XQQCPCLoginRequestMessageContent.m */; };
 		A9229C66BB71401F90494C08 /* SRIOConsumerPool.m in Sources */ = {isa = PBXBuildFile; fileRef = 706D3E7E2E03F21D009C42B2 /* SRIOConsumerPool.m */; };
+		AA1000010000000000000001 /* NotificationService.m in Sources */ = {isa = PBXBuildFile; fileRef = AA1000050000000000000005 /* NotificationService.m */; };
+		AA1000020000000000000002 /* UserNotifications.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F1B0DCE21E19AF400139CB1 /* UserNotifications.framework */; };
+		AA1000030000000000000003 /* QXQNotificationService.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = AA1000070000000000000007 /* QXQNotificationService.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		ACF7628C52D54C49A254C1A3 /* LBXScanVideoZoomView.m in Sources */ = {isa = PBXBuildFile; fileRef = B7C543F028D5876700A2550F /* LBXScanVideoZoomView.m */; };
 		AFE9D2D0111243639B0D73D8 /* XQQOUEJVoiceCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F550EBA217F5CC000F56C26 /* XQQOUEJVoiceCell.m */; };
 		AFF647E990914307A43A9593 /* SRError.m in Sources */ = {isa = PBXBuildFile; fileRef = 706D3E8A2E03F21D009C42B2 /* SRError.m */; };
@@ -608,6 +608,16 @@
 		FF99A9065EAB465FAF8F0986 /* XQQOUEJCompositeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F56F6A72529E43900B829C4 /* XQQOUEJCompositeCell.m */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		AA1000100000000000000010 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2E1D1FEF1FAF0AE600F4405D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = AA10000C000000000000000C;
+			remoteInfo = QXQNotificationService;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXCopyFilesBuildPhase section */
 		2F56F6FF252C956700B829C4 /* Embed App Extensions */ = {
 			isa = PBXCopyFilesBuildPhase;
@@ -634,21 +644,7 @@
 		};
 /* End PBXCopyFilesBuildPhase section */
 
-/* Begin PBXContainerItemProxy section */
-		AA1000100000000000000010 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 2E1D1FEF1FAF0AE600F4405D /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = AA10000C000000000000000C;
-			remoteInfo = QXQNotificationService;
-		};
-/* End PBXContainerItemProxy section */
-
 /* Begin PBXFileReference section */
-		AA1000040000000000000004 /* NotificationService.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NotificationService.h; sourceTree = "<group>"; };
-		AA1000050000000000000005 /* NotificationService.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NotificationService.m; sourceTree = "<group>"; };
-		AA1000060000000000000006 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		AA1000070000000000000007 /* QXQNotificationService.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = QXQNotificationService.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		0D6CCEB72B13295D43C1229D /* XQQMKDIOFZTAvatarCVCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XQQMKDIOFZTAvatarCVCell.h; sourceTree = "<group>"; };
 		14349F61243392E300FE38B3 /* XQQChatUIKit.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = XQQChatUIKit.xcassets; sourceTree = "<group>"; };
 		14349FA424362A6600FE38B3 /* XQQOUIDSeletedUserVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XQQOUIDSeletedUserVC.h; sourceTree = "<group>"; };
@@ -1581,6 +1577,10 @@
 		A61923DB0E615FB263A4DFA4 /* XQQIMService+XQQGroup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "XQQIMService+XQQGroup.m"; sourceTree = "<group>"; };
 		A7C3E1102F9C000100C0FFEE /* XQQKNODWVContactTVCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XQQKNODWVContactTVCell.h; sourceTree = "<group>"; };
 		A7C3E1112F9C000100C0FFEE /* XQQKNODWVContactTVCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XQQKNODWVContactTVCell.m; sourceTree = "<group>"; };
+		AA1000040000000000000004 /* NotificationService.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NotificationService.h; sourceTree = "<group>"; };
+		AA1000050000000000000005 /* NotificationService.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NotificationService.m; sourceTree = "<group>"; };
+		AA1000060000000000000006 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AA1000070000000000000007 /* QXQNotificationService.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = QXQNotificationService.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		B70162D5290E2F1700DCD651 /* MWTapDetectingImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWTapDetectingImageView.h; sourceTree = "<group>"; };
 		B70162D6290E2F1700DCD651 /* MWPhoto.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWPhoto.h; sourceTree = "<group>"; };
 		B70162D7290E2F1700DCD651 /* MWPhotoProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWPhotoProtocol.h; sourceTree = "<group>"; };
@@ -1736,14 +1736,6 @@
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		AA10000A000000000000000A /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				AA1000020000000000000002 /* UserNotifications.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		2E1D1FF41FAF0AE600F4405D /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -1765,19 +1757,17 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		AA10000A000000000000000A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AA1000020000000000000002 /* UserNotifications.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		AA1000080000000000000008 /* NotificationServiceExtension */ = {
-			isa = PBXGroup;
-			children = (
-				AA1000040000000000000004 /* NotificationService.h */,
-				AA1000050000000000000005 /* NotificationService.m */,
-				AA1000060000000000000006 /* Info.plist */,
-			);
-			path = NotificationServiceExtension;
-			sourceTree = "<group>";
-		};
 		1450EA82243891F300BF51FC /* Support */ = {
 			isa = PBXGroup;
 			children = (
@@ -4152,6 +4142,16 @@
 			path = "WoainretLoginpswVerify(登录密码验证)";
 			sourceTree = "<group>";
 		};
+		AA1000080000000000000008 /* NotificationServiceExtension */ = {
+			isa = PBXGroup;
+			children = (
+				AA1000040000000000000004 /* NotificationService.h */,
+				AA1000050000000000000005 /* NotificationService.m */,
+				AA1000060000000000000006 /* Info.plist */,
+			);
+			path = NotificationServiceExtension;
+			sourceTree = "<group>";
+		};
 		B70162D4290E2F1700DCD651 /* MWPhotoBrowser */ = {
 			isa = PBXGroup;
 			children = (
@@ -4316,23 +4316,6 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		AA10000C000000000000000C /* QXQNotificationService */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = AA10000D000000000000000D /* Build configuration list for PBXNativeTarget "QXQNotificationService" */;
-			buildPhases = (
-				AA1000090000000000000009 /* Sources */,
-				AA10000A000000000000000A /* Frameworks */,
-				AA10000B000000000000000B /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = QXQNotificationService;
-			productName = QXQNotificationService;
-			productReference = AA1000070000000000000007 /* QXQNotificationService.appex */;
-			productType = "com.apple.product-type.app-extension";
-		};
 		2E1D1FF61FAF0AE600F4405D /* XQQFireChat */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 2E1D200D1FAF0AE600F4405D /* Build configuration list for PBXNativeTarget "XQQFireChat" */;
@@ -4360,6 +4343,23 @@
 			productReference = 2E1D1FF71FAF0AE600F4405D /* QXQ.app */;
 			productType = "com.apple.product-type.application";
 		};
+		AA10000C000000000000000C /* QXQNotificationService */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AA10000D000000000000000D /* Build configuration list for PBXNativeTarget "QXQNotificationService" */;
+			buildPhases = (
+				AA1000090000000000000009 /* Sources */,
+				AA10000A000000000000000A /* Frameworks */,
+				AA10000B000000000000000B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = QXQNotificationService;
+			productName = QXQNotificationService;
+			productReference = AA1000070000000000000007 /* QXQNotificationService.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -4369,9 +4369,6 @@
 				LastUpgradeCheck = 1010;
 				ORGANIZATIONNAME = WildFireChat;
 				TargetAttributes = {
-					AA10000C000000000000000C = {
-						CreatedOnToolsVersion = 16.4;
-					};
 					2E1D1FF61FAF0AE600F4405D = {
 						CreatedOnToolsVersion = 9.1;
 						SystemCapabilities = {
@@ -4385,6 +4382,9 @@
 								enabled = 1;
 							};
 						};
+					};
+					AA10000C000000000000000C = {
+						CreatedOnToolsVersion = 16.4;
 					};
 				};
 			};
@@ -4409,13 +4409,6 @@
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		AA10000B000000000000000B /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		2E1D1FF51FAF0AE600F4405D /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -4550,6 +4543,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		AA10000B000000000000000B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
@@ -4573,14 +4573,6 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		AA1000090000000000000009 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				AA1000010000000000000001 /* NotificationService.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		2E1D1FF31FAF0AE600F4405D /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -5041,7 +5033,23 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		AA1000090000000000000009 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AA1000010000000000000001 /* NotificationService.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		AA1000110000000000000011 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = AA10000C000000000000000C /* QXQNotificationService */;
+			targetProxy = AA1000100000000000000010 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		2BCEC52E232E10DF00D55E0D /* wfc.strings */ = {
@@ -5080,69 +5088,7 @@
 		};
 /* End PBXVariantGroup section */
 
-/* Begin PBXTargetDependency section */
-		AA1000110000000000000011 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = AA10000C000000000000000C /* QXQNotificationService */;
-			targetProxy = AA1000100000000000000010 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
-
 /* Begin XCBuildConfiguration section */
-		AA10000E000000000000000E /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				APPLICATION_EXTENSION_API_ONLY = YES;
-				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_IDENTITY = "Apple Development";
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1.3;
-				DEVELOPMENT_TEAM = 4D3GJKQBFL;
-				INFOPLIST_FILE = NotificationServiceExtension/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@executable_path/../../Frameworks",
-				);
-				MARKETING_VERSION = 31.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.QiuXQ.Relase.ex1;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SKIP_INSTALL = YES;
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
-				SUPPORTS_MACCATALYST = NO;
-				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
-				TARGETED_DEVICE_FAMILY = 1;
-			};
-			name = Debug;
-		};
-		AA10000F000000000000000F /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				APPLICATION_EXTENSION_API_ONLY = YES;
-				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_IDENTITY = "Apple Development";
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1.3;
-				DEVELOPMENT_TEAM = 4D3GJKQBFL;
-				INFOPLIST_FILE = NotificationServiceExtension/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@executable_path/../../Frameworks",
-				);
-				MARKETING_VERSION = 31.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.QiuXQ.Relase.ex1;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SKIP_INSTALL = YES;
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
-				SUPPORTS_MACCATALYST = NO;
-				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
-				TARGETED_DEVICE_FAMILY = 1;
-			};
-			name = Release;
-		};
 		2E1D200B1FAF0AE600F4405D /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -5265,7 +5211,7 @@
 				CODE_SIGN_ENTITLEMENTS = XQQFireChat/XQQFireChat.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1.3;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 376RA88BPZ;
 				ENABLE_BITCODE = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = NO;
@@ -5276,7 +5222,7 @@
 				GCC_PREFIX_HEADER = "$(SRCROOT)/XQQFireChat/WFChat-Prefix-Header.pch";
 				HEADER_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = XQQFireChat/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = QXQ;
+				INFOPLIST_KEY_CFBundleDisplayName = QiuXQ;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -5286,7 +5232,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/XQQChatClient/amr",
 				);
-				MARKETING_VERSION = 31.0;
+				MARKETING_VERSION = 1.0;
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = com.QiuXQ.Relase;
 				PRODUCT_NAME = QXQ;
@@ -5311,7 +5257,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 1.3;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = "";
 				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = 4D3GJKQBFL;
 				ENABLE_BITCODE = NO;
@@ -5323,7 +5269,7 @@
 				GCC_PREFIX_HEADER = "$(SRCROOT)/XQQFireChat/WFChat-Prefix-Header.pch";
 				HEADER_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = XQQFireChat/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = QXQ;
+				INFOPLIST_KEY_CFBundleDisplayName = QiuXQ;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -5333,7 +5279,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/XQQChatClient/amr",
 				);
-				MARKETING_VERSION = 31.0;
+				MARKETING_VERSION = 1.0;
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = com.QiuXQ.Relase;
 				PRODUCT_NAME = QXQ;
@@ -5348,18 +5294,63 @@
 			};
 			name = Release;
 		};
+		AA10000E000000000000000E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1.3;
+				DEVELOPMENT_TEAM = 4D3GJKQBFL;
+				INFOPLIST_FILE = NotificationServiceExtension/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 31.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.QiuXQ.Relase.ex1;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		AA10000F000000000000000F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1.3;
+				DEVELOPMENT_TEAM = 4D3GJKQBFL;
+				INFOPLIST_FILE = NotificationServiceExtension/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 31.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.QiuXQ.Relase.ex1;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		AA10000D000000000000000D /* Build configuration list for PBXNativeTarget "QXQNotificationService" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				AA10000E000000000000000E /* Debug */,
-				AA10000F000000000000000F /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
 		2E1D1FF21FAF0AE600F4405D /* Build configuration list for PBXProject "XQQFireChat" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -5374,6 +5365,15 @@
 			buildConfigurations = (
 				2E1D200E1FAF0AE600F4405D /* Debug */,
 				2E1D200F1FAF0AE600F4405D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		AA10000D000000000000000D /* Build configuration list for PBXNativeTarget "QXQNotificationService" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AA10000E000000000000000E /* Debug */,
+				AA10000F000000000000000F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
