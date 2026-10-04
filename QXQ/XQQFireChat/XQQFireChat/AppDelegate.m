@@ -14,7 +14,6 @@
 #import "XQQAppService.h"
 #import "XQQGNRJYDIOZLoginVC.h"
 #import "XQQWJEFDOCYTabBarVC.h"
-#import "XQQPCLoginConfirmViewController.h"
 #import "XQQMKDIOFZTNormalQrcodeVC.h"
 #import "XQQKNODWVScanQrVC.h"
 #import "XQQMKDIOFZTNumberVC.h"
@@ -566,29 +565,9 @@ UNUserNotificationCenterDelegate, XQQQrCodeDelegate>
         for (XQQCMessage *msg in messages) {
             [self notificationForMessage:msg badgeCount:count];
         }
-    } else if (state == UIApplicationStateActive) {
-        [self xqq_presentPCLoginConfirmIfNeeded:messages];
     }
 }
 
-/// 前台收到 1 分钟内的 PC 登录请求时，弹出确认页（取最后一条）
-- (void)xqq_presentPCLoginConfirmIfNeeded:(NSArray<XQQCMessage *> *)messages {
-    XQQCPCLoginRequestMessageContent *pcLoginRequest = nil;
-    for (XQQCMessage *msg in messages) {
-        if ([self xqq_secondsSinceMessage:msg] < 60 &&
-            [msg.content isKindOfClass:[XQQCPCLoginRequestMessageContent class]]) {
-            pcLoginRequest = (XQQCPCLoginRequestMessageContent *)msg.content;
-        }
-    }
-    if (!pcLoginRequest || ![self xqq_currentNavigationController]) {
-        return;
-    }
-    XQQPCLoginConfirmViewController *vc = [[XQQPCLoginConfirmViewController alloc] init];
-    vc.sessionId = pcLoginRequest.sessionId;
-    vc.platform = pcLoginRequest.platform;
-    vc.modalPresentationStyle = UIModalPresentationFullScreen;
-    [self.window.rootViewController presentViewController:vc animated:YES completion:nil];
-}
 /// 后台收到消息时弹本地通知
 - (void)notificationForMessage:(XQQCMessage *)msg badgeCount:(NSInteger)count {
     // 超过 3 秒的消息可能已经由远程推送提醒过（后台被拉活后才同步下来），避免重复通知
@@ -855,21 +834,6 @@ UNUserNotificationCenterDelegate, XQQQrCodeDelegate>
         vc.sourceType = GroupMemberSource_QrCode;
         vc.hidesBottomBarWhenPushed = YES;
         [navigator pushViewController:vc animated:YES];
-        return YES;
-    } else if ([str rangeOfString:[self xqq_appUrlPrefix:@"pcsession"] options:NSCaseInsensitiveSearch].location == 0) {
-        // <scheme>://pcsession/sessionId?platform=3
-        NSURLComponents *components = [[NSURLComponents alloc] initWithString:str];
-        int platform = 0;
-        for (NSURLQueryItem *item in components.queryItems) {
-            if ([item.name isEqualToString:@"platform"]) {
-                platform = item.value.intValue;
-            }
-        }
-        XQQPCLoginConfirmViewController *vc = [[XQQPCLoginConfirmViewController alloc] init];
-        vc.sessionId = [NSURL URLWithString:str].lastPathComponent;
-        vc.platform = platform;
-        vc.modalPresentationStyle = UIModalPresentationFullScreen;
-        [navigator presentViewController:vc animated:YES completion:nil];
         return YES;
     }
     return NO;

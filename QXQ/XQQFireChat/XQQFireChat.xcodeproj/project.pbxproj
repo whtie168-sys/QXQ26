@@ -243,7 +243,6 @@
 		9084E2EA8F7545909850A780 /* XQQCModifyGroupAliasNotificationContent.m in Sources */ = {isa = PBXBuildFile; fileRef = 90B0444D1FEFDC4D00AFE79B /* XQQCModifyGroupAliasNotificationContent.m */; };
 		908DEB6D31E948C7BA1DFE32 /* FlagEmoj.plist in Resources */ = {isa = PBXBuildFile; fileRef = B7F100042F20000100ABC001 /* FlagEmoj.plist */; };
 		90C1D911208C12A900E923F4 /* foreman.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 90C1D90F208C12A900E923F4 /* foreman.mp4 */; };
-		90FF267E222AB34B0001D8AF /* XQQPCLoginConfirmViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 90FF267D222AB34B0001D8AF /* XQQPCLoginConfirmViewController.m */; };
 		9154F8FFC53143AD97D59DBD /* XQQUOEYShareMessageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F55103A217F5CC100F56C26 /* XQQUOEYShareMessageView.m */; };
 		927C37E286D74ACF966EAA50 /* NSObject+MJProperty.m in Sources */ = {isa = PBXBuildFile; fileRef = 702484EF2E4F26110034BEE6 /* NSObject+MJProperty.m */; };
 		9282A47DBABB4DF3926B9F67 /* AFNetworkReachabilityManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F550FAE217F5CC100F56C26 /* AFNetworkReachabilityManager.m */; };
@@ -1205,8 +1204,6 @@
 		90E4D1DE1FFB0AE200B9A4E4 /* XQQCLocationMessageContent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XQQCLocationMessageContent.m; sourceTree = "<group>"; };
 		90F584971FFDB39700F7FFA8 /* XQQCChangeGroupPortraitNotificationContent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XQQCChangeGroupPortraitNotificationContent.h; sourceTree = "<group>"; };
 		90F584981FFDB39800F7FFA8 /* XQQCChangeGroupPortraitNotificationContent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XQQCChangeGroupPortraitNotificationContent.m; sourceTree = "<group>"; };
-		90FF267C222AB34B0001D8AF /* XQQPCLoginConfirmViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XQQPCLoginConfirmViewController.h; sourceTree = "<group>"; };
-		90FF267D222AB34B0001D8AF /* XQQPCLoginConfirmViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XQQPCLoginConfirmViewController.m; sourceTree = "<group>"; };
 		923E4B2A82CC381AE130E541 /* XQQIMService+XQQContact.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "XQQIMService+XQQContact.m"; sourceTree = "<group>"; };
 		93212AB7F3AC487F82BCEA5E /* UIColor+Gradient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Gradient.m"; sourceTree = "<group>"; };
 		9637695F2C11831F003A0D18 /* CountlyCrashesConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CountlyCrashesConfig.h; sourceTree = "<group>"; };
@@ -1837,8 +1834,6 @@
 				704ACA7D2E7156F600FDEB04 /* XQQConversationDeleteManager.m */,
 				2FC50B7B245273A700B36F8A /* XQQPCSessionViewController.h */,
 				2FC50B7A245273A700B36F8A /* XQQPCSessionViewController.m */,
-				90FF267C222AB34B0001D8AF /* XQQPCLoginConfirmViewController.h */,
-				90FF267D222AB34B0001D8AF /* XQQPCLoginConfirmViewController.m */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -4725,7 +4720,6 @@
 				966DF2D52BFF424A004A1624 /* XQQKNODWVSearchUserCVCell.m in Sources */,
 				966DF2E22BFF424A004A1624 /* XQQBVOGHUYTableVCell.m in Sources */,
 				9BD6DB442AF25370005E4B46 /* XQQBVOGHUYContactsVC.m in Sources */,
-				90FF267E222AB34B0001D8AF /* XQQPCLoginConfirmViewController.m in Sources */,
 				9637699A2C11831F003A0D18 /* CountlyViewTrackingInternal.m in Sources */,
 				9BD6DB252AF220DB005E4B46 /* XQQKNODWVAddGroupCVCell.m in Sources */,
 				9684B0602BD8DF3800F1E0B2 /* XQQMKDIOFZTFontsizeVC.m in Sources */,

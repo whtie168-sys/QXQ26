@@ -270,51 +270,6 @@ static XQQAppService *sharedSingleton = nil;
     }];
 }
 
-- (void)pcScaned:(NSString *)sessionId success:(void(^)(void))successBlock error:(void(^)(int errorCode, NSString *message))errorBlock {
-    NSString *path = [NSString stringWithFormat:@"/pc/session/scan/%@", sessionId];
-    [self post:path data:nil isLogin:NO success:^(NSDictionary *dict) {
-        if([dict[@"code"] intValue] == 0) {
-            if(successBlock) successBlock();
-        } else {
-            NSString *errorStr = dict[@"message"] ? dict[@"message"] : @"Network error";
-            if(errorBlock) errorBlock([dict[@"code"] intValue], errorStr);
-        }
-    } error:^(NSError * _Nonnull error) {
-        if(errorBlock) errorBlock(-1, error.localizedDescription);
-    }];
-}
-
-- (void)pcConfirmLogin:(NSString *)sessionId success:(void(^)(void))successBlock error:(void(^)(int errorCode, NSString *message))errorBlock {
-    NSString *path = [NSString stringWithFormat:@"/pc/session/confirm/%@", sessionId];
-    NSString *userId = [[NSUserDefaults standardUserDefaults] objectForKey:@"savedUserId"];
-    NSDictionary *param = @{@"token":sessionId, @"user_id":userId, @"quick_login":@(1)};
-    [self post:path data:param isLogin:NO success:^(NSDictionary *dict) {
-        if([dict[@"code"] intValue] == 0) {
-            if(successBlock) successBlock();
-        } else {
-            NSString *errorStr = dict[@"message"] ? dict[@"message"] : @"Network error";
-            if(errorBlock) errorBlock([dict[@"code"] intValue], errorStr);
-        }
-    } error:^(NSError * _Nonnull error) {
-        if(errorBlock) errorBlock(-1, error.localizedDescription);
-    }];
-}
-
-- (void)pcCancelLogin:(NSString *)sessionId success:(void(^)(void))successBlock error:(void(^)(int errorCode, NSString *message))errorBlock {
-    NSString *path = [NSString stringWithFormat:@"/pc/session/cancel/%@", sessionId];
-    NSDictionary *param = @{@"token":sessionId};
-    [self post:path data:param isLogin:NO success:^(NSDictionary *dict) {
-        if([dict[@"code"] intValue] == 0) {
-            if(successBlock) successBlock();
-        } else {
-            NSString *errorStr = dict[@"message"] ? dict[@"message"] : @"Network error";
-            if(errorBlock) errorBlock([dict[@"code"] intValue], errorStr);
-        }
-    } error:^(NSError * _Nonnull error) {
-        if(errorBlock) errorBlock(-1, error.localizedDescription);
-    }];
-}
-
 - (void)getGroupMembersForPortrait:(NSString *)groupId
                            success:(void(^)(NSArray<NSDictionary<NSString *, NSString *> *> *groupMembers))successBlock
                              error:(void(^)(int error_code))errorBlock {
