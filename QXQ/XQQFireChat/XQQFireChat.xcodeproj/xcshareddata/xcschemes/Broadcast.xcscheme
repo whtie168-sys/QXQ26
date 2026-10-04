@@ -30,7 +30,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "2E1D1FF61FAF0AE600F4405D"
-               BuildableName = "QXQ.app"
+               BuildableName = "XQQ.app"
                BlueprintName = "XQQFireChat"
                ReferencedContainer = "container:XQQFireChat.xcodeproj">
             </BuildableReference>
@@ -62,7 +62,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "2E1D1FF61FAF0AE600F4405D"
-            BuildableName = "QXQ.app"
+            BuildableName = "XQQ.app"
             BlueprintName = "XQQFireChat"
             ReferencedContainer = "container:XQQFireChat.xcodeproj">
          </BuildableReference>
@@ -80,7 +80,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "2E1D1FF61FAF0AE600F4405D"
-            BuildableName = "QXQ.app"
+            BuildableName = "XQQ.app"
             BlueprintName = "XQQFireChat"
             ReferencedContainer = "container:XQQFireChat.xcodeproj">
          </BuildableReference>

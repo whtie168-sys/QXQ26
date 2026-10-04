@@ -710,7 +710,7 @@
 		2BD8D71C24D68FCD00281B81 /* XQQCFileRecord.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XQQCFileRecord.m; sourceTree = "<group>"; };
 		2BD8D72324D69B5300281B81 /* XQQHIOWIVFilesVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XQQHIOWIVFilesVC.h; sourceTree = "<group>"; };
 		2BD8D72424D69B5300281B81 /* XQQHIOWIVFilesVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XQQHIOWIVFilesVC.m; sourceTree = "<group>"; };
-		2E1D1FF71FAF0AE600F4405D /* QXQ.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QXQ.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		2E1D1FF71FAF0AE600F4405D /* XQQ.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = XQQ.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2E1D1FFA1FAF0AE600F4405D /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		2E1D1FFB1FAF0AE600F4405D /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		2E1D20011FAF0AE600F4405D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -1860,7 +1860,7 @@
 			isa = PBXGroup;
 			children = (
 				AA1000070000000000000007 /* QXQNotificationService.appex */,
-				2E1D1FF71FAF0AE600F4405D /* QXQ.app */,
+				2E1D1FF71FAF0AE600F4405D /* XQQ.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -4332,7 +4332,7 @@
 			);
 			name = XQQFireChat;
 			productName = XQQFireChat;
-			productReference = 2E1D1FF71FAF0AE600F4405D /* QXQ.app */;
+			productReference = 2E1D1FF71FAF0AE600F4405D /* XQQ.app */;
 			productType = "com.apple.product-type.application";
 		};
 		AA10000C000000000000000C /* QXQNotificationService */ = {
@@ -5214,7 +5214,7 @@
 				GCC_PREFIX_HEADER = "$(SRCROOT)/XQQFireChat/WFChat-Prefix-Header.pch";
 				HEADER_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = XQQFireChat/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = QiuXQ;
+				INFOPLIST_KEY_CFBundleDisplayName = XQQ;
 				IPHONEOS_DEPLOYMENT_TARGET = 15;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -5227,7 +5227,7 @@
 				MARKETING_VERSION = 1.0;
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = com.QiuXQ.Relase;
-				PRODUCT_NAME = QXQ;
+				PRODUCT_NAME = XQQ;
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
@@ -5261,7 +5261,7 @@
 				GCC_PREFIX_HEADER = "$(SRCROOT)/XQQFireChat/WFChat-Prefix-Header.pch";
 				HEADER_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = XQQFireChat/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = QiuXQ;
+				INFOPLIST_KEY_CFBundleDisplayName = XQQ;
 				IPHONEOS_DEPLOYMENT_TARGET = 15;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -5274,7 +5274,7 @@
 				MARKETING_VERSION = 1.0;
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = com.QiuXQ.Relase;
-				PRODUCT_NAME = QXQ;
+				PRODUCT_NAME = XQQ;
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = VesicaDeskAPS;
